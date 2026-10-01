@@ -1,0 +1,30 @@
+Como correr el proyecto en el localhost
+
+1. Abrir la carpeta "proyecto-basico" en IntelliJ (File > Open, seleccionar la carpeta donde esta el pom.xml).
+
+2. Esperar que IntelliJ importe el proyecto con Maven (abajo sale una barra de progreso).
+
+3. Si pide elegir un JDK, poner el JDK 17 que ya tengas instalado.
+
+4. Buscar la clase ProyectoBasicoApplication.java (esta en src/main/java/com/app).
+
+5. Click derecho sobre el archivo > Run 'ProyectoBasicoApplication'.
+   O tambien el boton verde de play que aparece al lado del metodo main.
+
+6. Esperar que en la consola de abajo salga algo como:
+   Tomcat started on port 8080
+
+7. Abrir el navegador y entrar a:
+   http://localhost:8080
+
+Deberia aparecer una pantalla en blanco, pero si te fijas en la pestaña del navegador
+dice el titulo "Mi Proyecto". Eso confirma que el proyecto esta corriendo bien.
+
+Si quieres cambiar el titulo, se edita en:
+src/main/resources/templates/index.html
+dentro de la etiqueta <title>...</title>
+
+Si quieres agregar algo a la pantalla (texto, imagen, etc), se agrega dentro
+de <body> </body> en ese mismo archivo.
+
+Para detener el servidor: boton cuadrado rojo (Stop) en la barra de arriba de IntelliJ.

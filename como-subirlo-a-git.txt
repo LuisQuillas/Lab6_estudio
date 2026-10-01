@@ -1,0 +1,45 @@
+Como subir este proyecto a GitHub (repositorio: Lab6_estudio)
+
+Si, este proyecto corre en cualquier computadora sin problema, porque no usa
+base de datos ni nada externo. Lo unico que necesita la otra computadora es:
+- Java 17 instalado (o superior)
+- IntelliJ (o Maven si lo corres por consola)
+Con eso basta, Maven descarga solo las librerias de Spring que faltan.
+
+Pasos para subirlo (parado dentro de la carpeta proyecto-basico):
+
+1. Abrir la terminal en la carpeta del proyecto (clic derecho > Abrir en Terminal,
+   o en IntelliJ abajo hay una pestaña "Terminal").
+
+2. Inicializar git (si todavia no lo hiciste):
+   git init
+
+3. Agregar todos los archivos:
+   git add .
+
+4. Hacer el primer commit:
+   git commit -m "Primera version del proyecto"
+
+5. Conectar con el repositorio que ya creaste en GitHub:
+   git remote add origin https://github.com/LuisQuillas/Lab6_estudio.git
+
+6. Renombrar la rama a main (GitHub la pide asi):
+   git branch -M main
+
+7. Subir todo:
+   git push -u origin main
+
+Con eso ya deberia aparecer todo el codigo en:
+https://github.com/LuisQuillas/Lab6_estudio
+
+Si despues modificas algo y quieres volver a subir:
+   git add .
+   git commit -m "describe que cambiaste"
+   git push
+
+Para probarlo en otra computadora:
+1. git clone https://github.com/LuisQuillas/Lab6_estudio.git
+2. Abrir la carpeta clonada en IntelliJ
+3. Esperar que importe con Maven
+4. Correr ProyectoBasicoApplication
+5. Entrar a localhost:8080
