@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!--
+  Fragmento "tablero": recibe la lista de filas (cada fila es una lista de
+  CeldaDto) y arma la matriz como una <table>. Cada <td> se delega al
+  fragmento "celda" (th:insert), que es quien decide el color/icono.
+-->
+<table th:fragment="tablero(filas)" class="tablero">
+    <tbody>
+        <tr th:each="fila : ${filas}">
+            <!-- th:replace (no th:insert): el fragmento "celda" YA es un <td> completo,
+                 por eso se reemplaza este <td> anfitrion en vez de anidar uno dentro de otro -->
+            <td th:each="c : ${fila}" th:replace="~{fragments/celda :: celda(${c})}"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #fafafa;
+}
+
+.titulo {
+    margin-top: 20px;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.tablero {
+    border-collapse: collapse;
+    border: 3px solid #2b1a0f;
+}
+
+.celda-td {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #5a3b25;
+    font-size: 28px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.celda-libre { background: #ffffff; }
+.madera-blanda { background: #c9a06c; }
+.madera-media { background: #8a5a30; }
+.madera-dura { background: #4a2e18; }
+.celda-ave { background: #ffffff; }
+.celda-semilla { background: #ffffff; }
+
+.panel {
+    background: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    width: 220px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+    height: fit-content;
+}
+
+.picotazos-label {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #777;
+}
+
+.picotazos-valor {
+    font-size: 36px;
+    font-weight: bold;
+    color: #c0392b;
+    margin: 4px 0 16px;
+}
+
+.fila-control {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.btn-dir {
+    background: #3366cc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 44px;
+    height: 44px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-reiniciar {
+    background: #3366cc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.mensaje-fin {
+    margin-top: 14px;
+    font-weight: bold;
+}
+
+.mensaje-victoria { color: #2e7d32; }
+.mensaje-derrota { color: #c0392b; }

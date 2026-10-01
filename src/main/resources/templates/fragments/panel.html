@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!--
+  Fragmento "panel": recibe el EstadoJuegoDto y dibuja el contador de
+  picotazos, los botones de direccion (U/D/L/R) y el boton Reiniciar.
+  Cada boton de direccion es un <form> propio que apunta a la MISMA
+  ruta unica (POST /cacatua_sulfurea) con el parametro "direccion".
+-->
+<div th:fragment="panel(estado)" class="panel">
+    <p class="picotazos-label">PICOTAZOS DISPONIBLES</p>
+    <p class="picotazos-valor" th:text="${estado.picotazosRestantes}">45</p>
+
+    <div class="controles" th:unless="${estado.finalizado}">
+        <form method="post" th:action="@{/cacatua_sulfurea}" class="fila-control">
+            <input type="hidden" name="direccion" value="U"/>
+            <button type="submit" class="btn-dir">U</button>
+        </form>
+        <div class="fila-control">
+            <form method="post" th:action="@{/cacatua_sulfurea}">
+                <input type="hidden" name="direccion" value="L"/>
+                <button type="submit" class="btn-dir">L</button>
+            </form>
+            <form method="post" th:action="@{/cacatua_sulfurea}">
+                <input type="hidden" name="direccion" value="D"/>
+                <button type="submit" class="btn-dir">D</button>
+            </form>
+            <form method="post" th:action="@{/cacatua_sulfurea}">
+                <input type="hidden" name="direccion" value="R"/>
+                <button type="submit" class="btn-dir">R</button>
+            </form>
+        </div>
+    </div>
+
+    <form method="post" th:action="@{/cacatua_sulfurea/reiniciar}">
+        <button type="submit" class="btn-reiniciar">Reiniciar</button>
+    </form>
+
+    <p th:if="${estado.finalizado}"
+       th:text="${estado.mensaje}"
+       th:classappend="${estado.gano} ? 'mensaje-victoria' : 'mensaje-derrota'"
+       class="mensaje-fin"></p>
+</div>
+
+</body>
+</html>

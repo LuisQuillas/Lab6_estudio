@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>El Juego de la Cacatua y la Semilla de Girasol</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}"/>
+</head>
+<body>
+
+<h1 class="titulo">EL JUEGO DE LA CACATÚA Y LA SEMILLA DE GIRASOL</h1>
+
+<div class="contenedor">
+    <!-- Fragmento Tablero: recibe la matriz de filas de CeldaDto -->
+    <div th:replace="~{fragments/tablero :: tablero(${filas})}"></div>
+
+    <!-- Fragmento Panel: recibe el EstadoJuegoDto -->
+    <div th:replace="~{fragments/panel :: panel(${estado})}"></div>
+</div>
+
+</body>
+</html>

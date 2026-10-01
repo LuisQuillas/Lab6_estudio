@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!--
+  Fragmento "celda": recibe UN objeto CeldaDto y dibuja un <td>.
+  Se reutiliza para las 30 celdas del tablero (6x5), cada una con su propio
+  color segun nivel de dureza, o la imagen del ave / la semilla si corresponde.
+-->
+<td th:fragment="celda(c)" th:classappend="${c.claseCss}" class="celda-td">
+    <span th:if="${c.tieneAve}" class="icono-ave">🦜</span>
+    <span th:if="${!c.tieneAve and c.esSemilla and c.nivel == 0}" class="icono-semilla">🌻</span>
+</td>
+
+</body>
+</html>
